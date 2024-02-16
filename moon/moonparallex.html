@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moon</title>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    body{
+        background-image: url(background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        color: white;
+        padding:10px;
+    }
+    span{
+        display: flex;
+        gap: 20px;
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        position:relative;
+    }
+    img{
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+    }
+    .text{
+        font-size: 5rem;
+        position: absolute;
+        top: 100px;
+        font-weight: 800;
+    }
+    .ab-h{
+        color: aliceblue;
+    }
+    .about{
+        background-color: black;
+    }
+    .para{
+        color: aliceblue;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Parallax</h1>
+        <span>
+            <p>Plant</p>
+            <p>Door</p>
+            <p>Light</p>
+            <p>About</p>
+        </span>
+    </header>
+
+    <section class="home">
+          
+           <img src="tree-left.png" alt="tree-left" id="tree-left">
+           <img src="tree-right.png" alt="tree-right" id="tree-right">
+           <h1 class="text" id="text">Parallax Moon</h1>
+           <img src="grass.png" alt="grass" id="grass">
+           <img src="gate-left.png" alt="gate-left" id="gate-left">
+           <img src="gate-right.png" alt="gate-right" id="gate-right">
+    </section>
+
+    <section class="about">
+        <h1 class="ab-h">About</h1>
+         <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque exercitationem minima, repudiandae hic, aut eligendi consectetur officia cum iusto enim incidunt aspernatur voluptate dolorem qui sapiente est dicta, similique eveniet soluta. Consequuntur aliquam soluta doloribus pariatur. Consequuntur quod earum ea, nemo quidem quas laborum temporibus ipsam! Deleniti sapiente fugit modi in ad nesciunt, iste totam earum, libero tempore explicabo odio aliquid quis quod dignissimos cum quaerat itaque omnis alias ut eum. Nobis exercitationem fuga, asperiores consectetur dolore sit cupiditate qui ad vero natus, et recusandae ducimus nam perspiciatis ipsum veniam dolorem ex quae temporibus placeat? Ea enim quo atque beatae dolores dolor reprehenderit consequuntur sit molestias? Commodi eligendi consectetur tenetur autem laboriosam unde dicta! Quibusdam eaque rerum eius ipsa. Unde, aliquam! Ab veritatis dolorum quam nobis fugit soluta, officiis exercitationem? Iusto esse aperiam accusantium, nam perspiciatis soluta impedit beatae error natus perferendis sapiente sequi expedita tempora libero unde! Quo, deleniti.</p>
+         <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente neque vero facilis blanditiis dignissimos totam unde maxime ut, impedit provident quaerat voluptate quasi fuga enim, perferendis est reprehenderit dolorum nesciunt aliquid omnis ullam consequuntur! Illo, hic voluptates officiis molestias laudantium voluptas debitis asperiores odio mollitia rem necessitatibus tenetur possimus fuga distinctio nemo nihil temporibus dignissimos veniam. Quo, modi velit magnam quas rem architecto. Nulla cupiditate repudiandae ea rerum. Aspernatur minus quisquam aliquam accusamus quaerat quo officiis ex, cum ipsam repellat! Fugit itaque voluptatibus consequatur fuga in veritatis, expedita perspiciatis accusamus porro vel recusandae, dolorem, voluptas delectus repellendus quos repellat officia cupiditate quia optio dolore dolor nemo quaerat? Culpa, eum eius. Excepturi necessitatibus fuga labore? Dolores voluptates error quae optio minima dolor, voluptate omnis suscipit deserunt pariatur eligendi quisquam dolorum magnam mollitia accusamus vero ipsum culpa veniam quos temporibus nostrum quia? Ipsa impedit harum incidunt perferendis aut unde a accusantium quos?</p>
+         <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo atque quae architecto sapiente natus! Voluptas rem qui perspiciatis aspernatur minima quaerat corporis et labore veniam, molestias molestiae cumque, quod dolore error beatae accusamus cum dolores amet delectus ut autem culpa iure mollitia? Veniam quisquam aspernatur consequatur blanditiis saepe aliquam ducimus rem facilis suscipit ex, dolor nulla dolore vitae cumque impedit eum iure, rerum quod beatae fuga illo aliquid a laborum accusantium! Harum id delectus sint minima earum iste quo facere, quas totam beatae sed possimus. Provident necessitatibus, aspernatur voluptatem iste facilis saepe! Nam quasi, consectetur repudiandae quaerat itaque mollitia excepturi tenetur iusto suscipit ea labore molestiae dolorum dolor qui accusamus iste iure sint distinctio dicta aspernatur illum consequatur facilis laudantium tempora. A vel perspiciatis doloribus quam ut est deserunt. Debitis, voluptatem! Quo eum modi ducimus? Distinctio voluptate saepe nulla facilis dolores! Molestiae reprehenderit rem dolore tempore ratione officiis, quam facere.</p>
+    </section>
+
+</body>
+
+
+
+<script>
+  let gateleft=document.getElementById("gate-left");
+  let gateright=document.getElementById("gate-right");
+  let treeleft=document.getElementById("tree-left");
+  let treeright=document.getElementById("tree-right")
+  let grass=document.getElementById("grass")
+  let text=document.getElementById("text")
+
+
+  window.addEventListener("scroll",()=>{
+    let values=window.scrollY;
+    gateleft.style.marginRight=values * 2 +"px";
+    gateright.style.marginLeft=values * 2 +"px";
+    text.style.marginTop=values * 1 +"px";
+    treeleft.style.marginRight=values * 0.5  +"px";
+    treeright.style.marginLeft=values * 0.5  +"px";
+  })
+
+
+</script>
+</html>
